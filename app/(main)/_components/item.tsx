@@ -5,7 +5,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
-import { useUser } from "@clerk/clerk-react";
 import { DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 import { useMutation } from "convex/react";
 import { ChevronDown, ChevronRight, LucideIcon, MoreHorizontal, Plus, Trash } from "lucide-react";
@@ -38,12 +37,12 @@ export const Item = ({
     onExpand,
     expanded,
 }: ItemProps ) => {
-    const user = useUser();
+    //const user = useUser();
     const router = useRouter();
     const create = useMutation(api.documents.create);
-    const archive = useMutation(api.documents.archive);
+    //const archive = useMutation(api.documents.archive);
 
-    const onArchive = (
+    {/*const onArchive = (
         event: React.MouseEvent<HTMLDivElement, MouseEvent>
     ) => {
         event: stopPropagation();
@@ -55,7 +54,7 @@ export const Item = ({
             success: "Note moved to trash",
             error: "Failed to archive note"
         });
-    }
+    }*/}
 
     const handleExpand = (
         event: React.MouseEvent<HTMLDivElement, MouseEvent>
@@ -74,7 +73,7 @@ export const Item = ({
             if (!expanded) {
                 onExpand?.();
             }
-            //router.push(`/documents/${documentId}`);
+            router.push(`/documents/${documentId}`);
         });
 
         toast.promise(promise, {

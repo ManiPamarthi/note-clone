@@ -76,7 +76,7 @@ const DocumentList = ({
                 active={params.documentId === document._id}
                 level={level}
                 onExpand={() => onExpand(document._id)}
-                expended= {expanded[document._id]}
+                expanded= {expanded[document._id]}
             />
             {expanded[document._id] && (
                 <DocumentList
