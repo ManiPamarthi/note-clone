@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils"
 import { ChevronsLeft, MenuIcon, PlusCircle, Search, Settings } from "lucide-react"
 import { usePathname } from "next/navigation"
-import { useEffect, useRef, useState } from "react"
+import { ElementRef, useEffect, useRef, useState } from "react"
 import { useMediaQuery } from "usehooks-ts"
 import UserItem from "./user-item"
 import { useMutation } from "convex/react"
