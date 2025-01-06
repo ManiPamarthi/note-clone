@@ -5,10 +5,15 @@ export const useScrollTop = (threshold = 10) => {
 
     useEffect(() => {
         const handleScroll = () => {
+        try {
             if (window.scrollY > threshold) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
+            }                
+            }
+        catch(err) {
+                console.error("An error occurred while handling scroll:", err);
             }
         };
         window.addEventListener("scroll", handleScroll);
